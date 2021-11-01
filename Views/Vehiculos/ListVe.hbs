@@ -1,0 +1,93 @@
+<div class="container">
+    <section>
+        <h1 style="color:white">Vehicules</h1>
+        <hr class="featurette-divider">
+        <a class="btn btn-lg btn-primary" href="/Vehicules/CreateVe">Post New Car</a>
+
+            {{#if count}}
+        <hr>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">#</font>
+                        </font>
+                    </th>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Make</font>
+                        </font>
+                    </th>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Model</font>
+                        </font>
+                    </th>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Year</font>
+                        </font>
+                    </th>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Price</font>
+                        </font>
+                    </th>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;"></font>
+                        </font>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active">
+                    {{#each Vehiculo as |Vehiculos| }}
+                    <th scope="row">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">{{Vehiculos.Id}}</font>
+                        </font>
+                    </th>
+                    <td>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">{{Vehiculos.Marca}}</font>
+                        </font>
+                    </td>
+                    <td>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">{{Vehiculos.Modelo}}</font>
+                        </font>
+                    </td>
+                    <td>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">{{Vehiculos.Año}}</font>
+                        </font>
+                    </td>
+                    <td>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">{{Vehiculos.Precio}}</font>
+                        </font>
+                    </td>
+                    <td>
+                        <font style="vertical-align: inherit; display:flex;" >
+                            <font style="vertical-align: inherit;"><a href="edit/{{Vehiculos.Id}}?edit=true"
+                                    class="btn btn-primary">Edit </a>
+                                    <form method="POST" action="/Vehicules/PostDelete">
+                                    <input  name="carId" id="carId" value="{{Vehiculos.Id}}" hidden>
+                                    <button type="submit" 
+                                    class="btn btn-danger" style="margin-left: 5px;" > Delete</button></font>
+                                    
+                                    </form>
+                        </font>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+    {{else}}
+    <h2 style="text-align: center; color:white">No Records</h2>
+    {{/if}}
+</div>
+

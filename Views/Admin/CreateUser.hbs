@@ -1,0 +1,61 @@
+<main class="container main-admin">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="create-user-section">
+                <div class="card-header bg-dark text-light">
+                    Create Account
+
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/Admin/CreateUser">
+                        <br>
+                        <div class="image-login">
+                            <img src="/Assets/img/Adm.jpg" alt="" width="120px" height="100px">
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="mb-3">
+                            <label for="Nombre" class="form-label">Fist Name</label>
+                            <input type="text" class="form-control" id="Nombre" name="nombre" value="{{Nombre}}">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Apellido" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="Nombre" name="apellido" value="{{Apellido}}">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Correo" class="form-label">Email</label>
+                            <input type="Email" class="form-control" id="Correo" name="correo" value="{{Correo}}">
+                            
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="Contraseña" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="Contraseña" name="contraseña" value="{{Contraseña}}">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Contraseña1" class="form-label">Password Confirm </label>
+                            <input type="password" class="form-control" id="Contraseña1" name="contraseña1" value="{{Contraseña1}}">
+                            
+                        </div>
+                        <span class="text-danger">{{Message}}</span>
+                        <br>
+                        <br>
+                        <div class="container"><button type="submit" class="btn btn-primary" style="margin-left: 120px;">Register</button></div>
+                        
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>

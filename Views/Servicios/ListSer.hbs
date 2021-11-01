@@ -1,0 +1,71 @@
+<div class="container">
+    <section>
+        <h1 style="color:white">Services</h1>
+        <hr class="featurette-divider">
+        <a class="btn btn-lg btn-primary" href="/Services/CreateSer">Create New Service</a>
+
+            {{#if count}}
+        <hr>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">#</font>
+                        </font>
+                    </th>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Description</font>
+                        </font>
+                    </th>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Price</font>
+                        </font>
+                    </th>
+                    <th scope="col">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;"></font>
+                        </font>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active">
+                    {{#each servicio as |servicios| }}
+                    <th scope="row">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">{{servicios.Id}}</font>
+                        </font>
+                    </th>
+                    <td>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">{{servicios.Descripcion}}</font>
+                        </font>
+                    </td>
+                    <td>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">{{servicios.Precio}}</font>
+                        </font>
+                    </td>
+                    <td>
+                        <font style="vertical-align: inherit; display:flex;" >
+                            <font style="vertical-align: inherit;"><a href="edit/{{servicios.Id}}?edit=true"
+                                    class="btn btn-primary">Edit </a>
+                                    <form method="POST" action="/Services/PostDelete">
+                                    <input  name="servicioId" id="servicioId" value="{{servicios.Id}}" hidden>
+                                    <button type="submit" 
+                                    class="btn btn-danger" style="margin-left: 5px;"> Delete</button></font>
+                                    </form>
+                        </font>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>
+    {{else}}
+    <h2 style="text-align: center; color:white">No Records</h2>
+    {{/if}}
+</div>

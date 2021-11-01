@@ -1,0 +1,35 @@
+<div class="container">
+    
+<main class=" card-body form-signin">
+    <hr class="divider-heading">
+    <form method="POST" action="/Admin/Login">
+        <div class="image-login">
+            <img  src="/Assets/img/Adm.jpg" alt="" width="120px" height="100px" >
+        </div>
+        
+        <h1 class="title h3 mb-3 fw-normal text-terms"> Administrator</h1>
+
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="example2401" name="Correo" value="{{User}}">
+            <label for="floatingInput">Email</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Pass" value="{{Pass}}">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <span class="text-danger">{{Message}}</span>
+        <br>
+        
+        <span><a href="/Admin/CreateUser">Registrer Now</a></span>
+        <br>
+        <span><a href="/Admin/RestorePass">Forget my password</a></span>
+        <br>
+        <br>
+
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+    </form>
+</main>
+</div>

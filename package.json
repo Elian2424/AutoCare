@@ -1,0 +1,33 @@
+{
+  "name": "autocare",
+  "version": "1.0.0",
+  "description": "Una Paguina web con seccion administrativa de datos",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elian2424/AutoCare.git"
+  },
+  "author": "Ramfis Elian Perez Mendez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elian2424/AutoCare/issues"
+  },
+  "homepage": "https://github.com/Elian2424/AutoCare#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "multer": "^1.4.3",
+    "mysql2": "^2.3.2",
+    "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.14",
+    "sequelize": "^6.7.0",
+    "uuid": "^8.3.2"
+  }
+}

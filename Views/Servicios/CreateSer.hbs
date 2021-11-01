@@ -1,0 +1,70 @@
+<main class="container main-admin">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="create-user-section">
+                <div class="card-header bg-dark text-light">
+                    {{#if EditMode}}
+                    Edit Services
+                    {{else}}
+                    Create New Service
+                    {{/if}}
+
+                </div>
+                <div class="card-body">
+                    <form method="POST" action=" {{#if EditMode}}/Services/PostEdit{{else}}/Services/CreateSer{{/if}}">
+                        <br>
+                        <div class="image-login">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-section"
+                                            width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffff" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M20 20h.01" />
+                                            <path d="M4 20h.01" />
+                                            <path d="M8 20h.01" />
+                                            <path d="M12 20h.01" />
+                                            <path d="M16 20h.01" />
+                                            <path d="M20 4h.01" />
+                                            <path d="M4 4h.01" />
+                                            <path d="M8 4h.01" />
+                                            <path d="M12 4h.01" />
+                                            <path d="M16 4l0 0" />
+                                            <rect x="4" y="8" width="16" height="8" rx="1" />
+                                        </svg>
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="mb-3">
+                            <label for="Descripcion" class="form-label">Description</label>
+                            <input type="text" class="form-control" id="Descripcion" name="Descripcion" value="{{Descripcion}} "Required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Precio" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="Precio" name="Precio" value="{{Precio}}" Required>
+                            
+                        </div>
+                        {{#if EditMode}}
+
+                        <input type="hidden" name="servicioId" value="{{Id}}">
+
+                        {{/if}}
+                       
+                        <span class="text-danger">{{Message}}</span>
+                        <br>
+                        <br>
+                        <div class="container"><button type="submit" class="btn btn-primary" style="margin-left: 120px;">{{#if EditMode}}Update{{else}}Register{{/if}}</button></div>
+                        
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>

@@ -1,0 +1,81 @@
+<main class="container main-admin">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="create-user-section">
+                <div class="card-header bg-dark text-light">
+                    {{#if EditMode}}
+                    Edit Car
+                    {{else}}
+                    Post New car
+                    {{/if}}
+
+                </div>
+                <div class="card-body">
+                    <form enctype="multipart/form-data" method="POST" action=" {{#if EditMode}}/Vehicules/PostEdit{{else}}/Vehicules/CreateVe{{/if}}">
+                        <br>
+                        <div class="image-login">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-car" width="50" height="50"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="7" cy="17" r="2" />
+                                        <circle cx="17" cy="17" r="2" />
+                                        <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" />
+                                    </svg>
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="mb-3">
+                            <label for="Marca" class="form-label">Make</label>
+                            <input type="text" class="form-control" id="Marca" name="Marca" value="{{Vehicule.Marca}} "Required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Modelo" class="form-label">Model</label>
+                            <input type="text" class="form-control" id="Modelo" name="Modelo" value="{{Vehicule.Modelo}}" Required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Año" class="form-label">Year</label>
+                            <input type="number" min="1900" max="2099" step="1" value="2016" class="form-control" id="Año" name="Año" value="{{Vehicule.Año}}" Required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Precio" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="Precio" name="Precio" value="{{Vehicule.Precio}}" Required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="IFormFile" class="form-label">Image 1</label>
+                            <input class="form-control" type="file" id="IFormFile" name="imagen">
+                            {{#if EditMode}}
+                            <span class="text-danger">You must to upload a file again</span>
+                            {{/if}}
+                        </div>
+                        
+                        
+
+                        {{#if EditMode}}
+
+                        <input type="hidden" name="carId" value="{{Vehicule.Id}}">
+
+                        {{/if}}
+                       
+                        <span class="text-danger">{{Message}}</span>
+                        <br>
+                        <br>
+                        <div class="container"><button type="submit" class="btn btn-primary" style="margin-left: 120px;">{{#if EditMode}}Update{{else}}Register{{/if}}</button></div>
+                        
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>
